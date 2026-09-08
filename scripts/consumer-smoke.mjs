@@ -13,5 +13,11 @@ execFileSync('node', ['--input-type=module', '-e', `
   if (typeof mod.createDrizzleResource !== 'function' || typeof mod.drizzleLoader !== 'function' || typeof mod.drizzle !== 'function') throw new Error('missing public export')
   const fetcher = mod.createDrizzleResource({}, async (_db, key) => 'row:' + key)
   if (await fetcher('consumer') !== 'row:consumer') throw new Error('runtime export failed')
+  try {
+    await import('drizzle-orm')
+    throw new Error('optional drizzle-orm peer unexpectedly became a runtime dependency')
+  } catch (error) {
+    if (error instanceof Error && error.message.includes('unexpectedly became')) throw error
+  }
 `], { cwd: dir, stdio: 'inherit' })
 console.log(`isolated consumer passed in ${dir}`)

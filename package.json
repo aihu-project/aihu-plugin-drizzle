@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build",
     "test": "vitest run",
-    "verify:pack": "node scripts/verify-pack.mjs"
+    "verify:pack": "node scripts/pack-and-verify.mjs"
   },
   "dependencies": {
     "@aihu/server": "^0.6.0"
