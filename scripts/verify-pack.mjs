@@ -15,6 +15,9 @@ const packedManifest = JSON.parse(execFileSync('tar', ['-xOf', archivePath, 'pac
 const fail = (message) => { throw new Error(`packed package check failed: ${message}`) }
 if (packedManifest.name !== manifest.name) fail(`name ${packedManifest.name} != ${manifest.name}`)
 if (packedManifest.version !== manifest.version) fail(`version ${packedManifest.version} != ${manifest.version}`)
+if (packedManifest.main !== './dist/index.js') fail('main does not point to dist/index.js')
+if (packedManifest.module !== './dist/index.js') fail('module does not point to dist/index.js')
+if (packedManifest.types !== './dist/index.d.ts') fail('types does not point to dist/index.d.ts')
 if (packedManifest.exports?.['.']?.import !== './dist/index.js') fail('ESM export does not point to dist/index.js')
 if (packedManifest.exports?.['.']?.types !== './dist/index.d.ts') fail('types export does not point to dist/index.d.ts')
 if (packedManifest.dependencies?.['@aihu/server'] !== manifest.dependencies['@aihu/server']) fail('published dependency range changed')
