@@ -34,7 +34,12 @@ jobs:
         run: npm run typecheck
       - name: Test
         run: npm test
-      - name: Verify packed package
-        run: npm run verify:pack
+      - name: Verify one exact packed package
+        id: pack
+        run: |
+          set -euo pipefail
+          tarball="$(npm run --silent verify:pack)"
+          test -f "$tarball"
+          echo "tarball=$tarball" >> "$GITHUB_OUTPUT"
       - name: Verify isolated consumer
-        run: node scripts/consumer-smoke.mjs "$(find . -maxdepth 1 -name '*.tgz' -print -quit)"
+        run: node scripts/consumer-smoke.mjs "${{ steps.pack.outputs.tarball }}"

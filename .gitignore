@@ -3,6 +3,7 @@ dist/
 coverage/
 *.tgz
 .npmrc
+.release/
 
 # Codemap machine state is local; the tuned policy is tracked below.
 .codemap/*
