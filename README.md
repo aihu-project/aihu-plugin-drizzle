@@ -4,7 +4,7 @@
 
 Drizzle ORM data adapter for aihu — typed createResource fetchers and defineLoader helpers (Postgres / SQLite / libSQL).
 
-Part of the **meta-framework** layer of Aihu. Provides whole-app capability — file-based routing, SSR, loaders, cookies — without the boilerplate other meta-frameworks impose. See [arch-1](../../docs/roadmap/arch-1-website.md) for the meta-framework contract.
+Part of the **meta-framework** layer of Aihu. Provides whole-app capability — file-based routing, SSR, loaders, cookies — without the boilerplate other meta-frameworks impose. See the [Aihu documentation](https://aihu.dev) for the meta-framework contract.
 
 <!-- BEGIN_HANDWRITTEN: prose -->
 Server-only. Wraps a Drizzle query into the two data-access shapes aihu uses:
@@ -39,7 +39,7 @@ export const userRoute = defineRoute('/users/:id', handler, { loader: userLoader
 ## Install
 
 <!-- BEGIN_AUTOGEN: install -->
-<!-- regenerate: bun scripts/sync-readme.ts (also runs in pre-commit + CI) -->
+<!-- package metadata is checked by tests/metadata-drift.test.ts -->
 
 ```bash
 npm install @aihu-plugin/drizzle
@@ -47,75 +47,75 @@ npm install @aihu-plugin/drizzle
 bun add @aihu-plugin/drizzle
 ```
 
-<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.6`.</i></sub>
+<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.7`.</i></sub>
 
 <!-- END_AUTOGEN: install -->
 
 ## Package facts
 
 <!-- BEGIN_AUTOGEN: stats -->
-<!-- regenerate: bun scripts/sync-readme.ts (also runs in pre-commit + CI) -->
+<!-- package metadata is checked by tests/metadata-drift.test.ts -->
 
 | | |
 |---|---|
-| **Version** | `0.1.6` |
+| **Version** | `0.1.7` |
 | **Tier** | B — Meta-framework — Drizzle ORM data adapter (typed resources + loaders) |
 | **Published files** | 3 entries |
 | **License** | MIT |
 
-<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.6`.</i></sub>
+<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.7`.</i></sub>
 
 <!-- END_AUTOGEN: stats -->
 
 ## Exports
 
 <!-- BEGIN_AUTOGEN: exports -->
-<!-- regenerate: bun scripts/sync-readme.ts (also runs in pre-commit + CI) -->
+<!-- package metadata is checked by tests/metadata-drift.test.ts -->
 
 | Subpath | ESM | CJS |
 |---|---|---|
 | `.` | `./dist/index.js` | `—` |
 
-<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.6`.</i></sub>
+<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.7`.</i></sub>
 
 <!-- END_AUTOGEN: exports -->
 
 ## Dependencies
 
 <!-- BEGIN_AUTOGEN: deps -->
-<!-- regenerate: bun scripts/sync-readme.ts (also runs in pre-commit + CI) -->
+<!-- package metadata is checked by tests/metadata-drift.test.ts -->
 
 **Dependencies:**
 
-- `@aihu/server` — `workspace:*`
+- `@aihu/server` — `^0.6.0`
 
 **Peer dependencies:**
 
 - `drizzle-orm` — `>=0.29.0`
 
-<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.6`.</i></sub>
+<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.7`.</i></sub>
 
 <!-- END_AUTOGEN: deps -->
 
 ## See also
 
 <!-- BEGIN_AUTOGEN: see-also -->
-<!-- regenerate: bun scripts/sync-readme.ts (also runs in pre-commit + CI) -->
+<!-- package metadata is checked by tests/metadata-drift.test.ts -->
 
-- [@aihu-plugin/data](../plugin-data)
-- [Aihu framework root](../../README.md)
+- [@aihu-plugin/data](https://www.npmjs.com/package/@aihu-plugin/data)
+- [Aihu framework](https://aihu.dev)
 
-<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.6`.</i></sub>
+<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.7`.</i></sub>
 
 <!-- END_AUTOGEN: see-also -->
 
 ## License
 
 <!-- BEGIN_AUTOGEN: license -->
-<!-- regenerate: bun scripts/sync-readme.ts (also runs in pre-commit + CI) -->
+<!-- package metadata is checked by tests/metadata-drift.test.ts -->
 
-MIT — see [LICENSE](../../LICENSE).
+MIT — see [LICENSE](./LICENSE).
 
-<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.6`.</i></sub>
+<sub><i>Auto-generated against `@aihu-plugin/drizzle@0.1.7`.</i></sub>
 
 <!-- END_AUTOGEN: license -->

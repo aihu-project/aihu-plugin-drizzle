@@ -1,5 +1,10 @@
 # @aihu-plugin/drizzle
 
+## 0.1.7
+
+- Prepare the standalone package extraction with published dependency ranges,
+  provenance-ready release checks, and an isolated consumer smoke test.
+
 ## 0.1.6
 
 ### Patch Changes

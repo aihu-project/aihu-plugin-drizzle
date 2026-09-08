@@ -1,6 +1,6 @@
 {
   "name": "@aihu-plugin/drizzle",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -21,14 +21,21 @@
   "scripts": {
     "build": "rolldown -c",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "verify:pack": "node scripts/verify-pack.mjs"
   },
   "dependencies": {
-    "@aihu/server": "workspace:*"
+    "@aihu/server": "^0.6.0"
   },
   "devDependencies": {
-    "@aihu/plugin": "workspace:*",
-    "@aihu-plugin/data": "workspace:*"
+    "@aihu/plugin": "^0.1.1",
+    "@aihu-plugin/data": "^2.0.5",
+    "@types/node": "^22.13.10",
+    "rolldown": "^1.0.0-rc.17",
+    "rolldown-plugin-dts": "^0.23.2",
+    "typescript": "^5.6.2",
+    "vitest": "^3.2.6"
   },
   "peerDependencies": {
     "drizzle-orm": ">=0.29.0"
@@ -41,11 +48,10 @@
   "description": "Drizzle ORM data adapter for aihu — typed createResource fetchers and defineLoader helpers (Postgres / SQLite / libSQL).",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aihu-project/aihu.git",
-    "directory": "packages/plugin-drizzle"
+    "url": "git+https://github.com/aihu-project/aihu-plugin-drizzle.git"
   },
-  "homepage": "https://github.com/aihu-project/aihu/tree/main/packages/plugin-drizzle#readme",
-  "bugs": "https://github.com/aihu-project/aihu/issues",
+  "homepage": "https://github.com/aihu-project/aihu-plugin-drizzle#readme",
+  "bugs": "https://github.com/aihu-project/aihu-plugin-drizzle/issues",
   "publishConfig": {
     "access": "public"
   }
