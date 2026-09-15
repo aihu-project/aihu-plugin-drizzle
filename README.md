@@ -34,6 +34,23 @@ export const userRoute = defineRoute('/users/:id', handler, { loader: userLoader
 ```
 
 `drizzle-orm` and its drivers (`postgres`, `@libsql/client`) are **optional peer dependencies** referenced via `import type` only — importing this package never breaks when no Drizzle peer is installed. You supply the `db` handle; the adapter only awaits the query.
+
+### Plugin registration
+
+`@aihu-plugin/drizzle` also exports a `drizzle()` plugin factory that registers
+the adapter under the Plugin Contract (§3, §7.1) — a `serverOnly: true`
+registration shim, currently a no-op (`contributes: {}`) until query-macro
+lowering lands:
+
+```ts
+// aihu.config.ts
+import { drizzle } from '@aihu-plugin/drizzle'
+import { defineAihuConfig } from '@aihu/server'
+
+export default defineAihuConfig({
+  plugins: [drizzle()],
+})
+```
 <!-- END_HANDWRITTEN: prose -->
 
 ## Install
