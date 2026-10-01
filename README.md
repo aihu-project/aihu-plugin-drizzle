@@ -33,7 +33,12 @@ const userLoader = drizzleLoader(db, (db, ctx) =>
 export const userRoute = defineRoute('/users/:id', handler, { loader: userLoader })
 ```
 
-`drizzle-orm` and its drivers (`postgres`, `@libsql/client`) are **optional peer dependencies** referenced via `import type` only — importing this package never breaks when no Drizzle peer is installed. You supply the `db` handle; the adapter only awaits the query.
+`drizzle-orm` is an **optional peer dependency** referenced via `import type`
+only, so importing this package never breaks when no Drizzle peer is
+installed. Install `drizzle-orm` plus whichever driver package your project
+needs (e.g. `postgres`, `@libsql/client`) directly — only `drizzle-orm` itself
+is declared as a peer dependency of this package. You supply the `db` handle;
+the adapter only awaits the query.
 
 ### Plugin registration
 
